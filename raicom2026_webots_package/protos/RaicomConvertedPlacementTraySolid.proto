@@ -1,0 +1,34 @@
+#VRML_SIM R2023b utf8
+
+PROTO RaicomConvertedPlacementTraySolid [
+  field SFVec3f translation 0 0 0
+  field SFRotation rotation 0 0 1 0
+  field SFString name "raicom_placement_tray_solid"
+]
+{
+  Solid {
+    translation IS translation
+    rotation IS rotation
+    name IS name
+    model "RAICOM2026 solid holed placement tray"
+    locked TRUE
+    contactMaterial "placement_tray_grip"
+    children [
+      Shape {
+        appearance PBRAppearance {
+          baseColor 0.86 0.76 0.56
+          metalness 0
+          roughness 1
+        }
+        geometry DEF SOLID_HOLED_TRAY Mesh {
+          url [
+            "../meshes/converted/raicom_placement_tray_solid.obj"
+          ]
+        }
+      }
+    ]
+    boundingObject Shape {
+      geometry USE SOLID_HOLED_TRAY
+    }
+  }
+}

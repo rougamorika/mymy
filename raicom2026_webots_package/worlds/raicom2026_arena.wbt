@@ -1,0 +1,146 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "../protos/Raicom2026Arena.proto"
+EXTERNPROTO "../protos/RaicomWorkpieceCircle.proto"
+EXTERNPROTO "../protos/RaicomWorkpieceClover.proto"
+EXTERNPROTO "../protos/RaicomWorkpieceParallelogram.proto"
+EXTERNPROTO "../protos/RaicomWorkpiecePentagon.proto"
+EXTERNPROTO "../protos/RaicomWorkpiecePlus.proto"
+EXTERNPROTO "../protos/RaicomWorkpieceRectangle.proto"
+EXTERNPROTO "../protos/RaicomWorkpieceSquare.proto"
+EXTERNPROTO "../protos/RaicomWorkpieceStar.proto"
+EXTERNPROTO "../protos/RaicomWorkpieceTriangle.proto"
+EXTERNPROTO "D:/files/raicom2026_final_webots_package/protos/oriniginal_protos/protos/robodyno_webots/camera/RobodynoCamera.proto"
+EXTERNPROTO "D:/files/raicom2026_final_webots_package/protos/oriniginal_protos/protos/robodyno_webots/camera/CameraBracket.proto"
+
+WorldInfo {
+  basicTimeStep 16
+  contactProperties [
+    ContactProperties {
+      material1 "placement_tray_grip"
+      coulombFriction [
+        0.2
+      ]
+      rollingFriction 0.01 0.01 0.01
+      bounce 0
+      bounceVelocity 0
+      maxContactJoints 80
+    }
+    ContactProperties {
+      material1 "arena_support"
+      coulombFriction [
+        0.45
+      ]
+      rollingFriction 0.003 0.003 0.003
+      bounce 0
+      bounceVelocity 0
+      softERP 0.05
+      softCFM 0.005
+      maxContactJoints 80
+    }
+  ]
+}
+Viewpoint {
+  orientation -0.5714895698802436 0.5714896191010873 0.5888966690157013 2.0771669643295025
+  position -0.21671010876922173 0.1417745200472892 0.8015703764814169
+  near 0.01
+}
+Background {
+  skyColor [
+    0.97 0.98 1
+  ]
+}
+Robot {
+  translation 0.1 0 0
+  children [
+    RobodynoCamera {
+      translation -0.325 0.14 0.59
+      rotation 0.7071067811859252 -0.7071067811859252 1.326789589425184e-06 3.14159
+      controller "camera_controller"
+    }
+    CameraBracket {
+      translation -0.47 0.12 0.006
+    }
+  ]
+}
+DirectionalLight {
+  ambientIntensity 0.45
+  direction -0.3 0.4 -1
+  intensity 1.2
+  castShadows TRUE
+}
+DirectionalLight {
+  ambientIntensity 0.2
+  direction 0.5 -0.2 -1
+  intensity 0.55
+}
+Raicom2026Arena {
+  name "raicom2026_static_arena"
+}
+RaicomWorkpieceTriangle {
+  translation 0.07 0.27 0.02
+  name "raicom_triangle_piece(1)"
+}
+RaicomWorkpieceTriangle {
+  translation 0.02 0.27 0.02
+}
+RaicomWorkpiecePlus {
+  translation -0.135 0.2775 0.0155
+  name "box_1_plus_a"
+}
+RaicomWorkpiecePlus {
+  translation -0.06 0.2725 0.0155
+  name "box_1_plus_b"
+}
+RaicomWorkpieceRectangle {
+  translation 0.02 0.2075 0.0155
+  name "box_2_rectangle_a"
+}
+RaicomWorkpieceRectangle {
+  translation 0.075 0.2125 0.0155
+  name "box_2_rectangle_b"
+}
+RaicomWorkpieceStar {
+  translation -0.135 0.2075 0.0155
+  name "box_3_star_a"
+}
+RaicomWorkpieceStar {
+  translation -0.06 0.2125 0.0155
+  name "box_3_star_b"
+}
+RaicomWorkpiecePlus {
+  translation -0.32 0.285 0.00515
+  name "tray_plus_target"
+}
+RaicomWorkpieceRectangle {
+  translation -0.2625 0.285 0.00515
+  name "tray_rectangle_target"
+}
+RaicomWorkpieceSquare {
+  translation -0.205 0.285 0.00515
+  name "tray_square_target"
+}
+RaicomWorkpieceStar {
+  translation -0.32 0.2275 0.00515
+  name "tray_star_target"
+}
+RaicomWorkpiecePentagon {
+  translation -0.2625 0.2275 0.00515
+  name "tray_pentagon_target"
+}
+RaicomWorkpieceTriangle {
+  translation -0.205 0.2275 0.00515
+  name "tray_triangle_target"
+}
+RaicomWorkpieceClover {
+  translation -0.32 0.17 0.00515
+  name "tray_clover_target"
+}
+RaicomWorkpieceParallelogram {
+  translation -0.26249 0.17004 0.00515
+  name "tray_parallelogram_target"
+}
+RaicomWorkpieceCircle {
+  translation -0.205 0.17 0.00515
+  name "tray_circle_target"
+}
