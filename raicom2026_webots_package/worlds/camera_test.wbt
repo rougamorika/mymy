@@ -36,8 +36,8 @@ WorldInfo {
   ]
 }
 Viewpoint {
-  orientation -0.5502545869451017 0.6021478112015667 0.5784789564115864 2.0128864070343977
-  position -0.05921667528073542 0.04703548174883812 1.426750070269879
+  orientation 0.6300302804519192 -0.09646439350429385 -0.770555946378668 3.376463171007826
+  position 0.06216186491934203 0.22603365563929978 0.8371257545659094
   near 0.01
 }
 Background {
@@ -45,29 +45,37 @@ Background {
     0.97 0.98 1
   ]
 }
-Robot {
-  translation 0.1 0 0
-  children [
-    RobodynoCamera {
-      translation -0.325 0.14 0.59
-      rotation 0.7071067811859252 -0.7071067811859252 1.326789589425184e-06 3.14159
-      controller "top_tray_recess_controller"
-    }
-    CameraBracket {
-      translation -0.47 0.12 0.006
-    }
-  ]
+RobodynoCamera {
+  translation -0.225 0.14 0.59
+  rotation 0.7071067811859252 -0.7071067811859252 1.326789589425184e-06 3.14159
+  name "top_tray_camera"
+  cameraId "top_tray_camera"
+  controller "top_tray_recess_controller"
+}
+CameraBracket {
+  translation -0.37 0.12 0.006
+}
+RobodynoCamera {
+  translation -0.01 0.235 0.58
+  rotation 7.19235e-09 -1 9.38186e-07 3.14159
+  name "detection_camera_robot"
+  cameraId "detection_camera"
+  controller "color_detection"
+}
+CameraBracket {
+  translation -0.09 0.38 -0.004
+  rotation 0 0 1 -1.5707953071795862
 }
 DirectionalLight {
-  ambientIntensity 0.45
+  ambientIntensity 0.20
   direction -0.3 0.4 -1
-  intensity 1.2
+  intensity 2.0
   castShadows TRUE
 }
 DirectionalLight {
-  ambientIntensity 0.2
+  ambientIntensity 0.05
   direction 0.5 -0.2 -1
-  intensity 0.55
+  intensity 1.0
 }
 Raicom2026Arena {
   name "raicom2026_static_arena"

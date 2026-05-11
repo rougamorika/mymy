@@ -27,7 +27,7 @@ def main():
     robot = Robot()
     timestep = int(robot.getBasicTimeStep())
 
-    camera = robot.getDevice("camera")
+    camera = robot.getDevice("detection_camera")
     camera.enable(timestep)
 
     recognizer = ShapeRecognizer()

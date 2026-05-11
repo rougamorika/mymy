@@ -33,7 +33,11 @@ def _write_debug_images(debug_dir: Path, frame_index: int, frame: np.ndarray, re
 def main():
     robot = Robot()
     timestep = int(robot.getBasicTimeStep())
-    camera = robot.getDevice("camera")
+    camera = robot.getDevice("top_tray_camera")
+    if camera is None:
+        camera = robot.getDevice("camera")
+    if camera is None:
+        raise RuntimeError("No camera device found")
     camera.enable(timestep)
     recognizer = TopTrayRecessRecognizer()
     debug_dir = Path(__file__).resolve().parent / "debug_frames"

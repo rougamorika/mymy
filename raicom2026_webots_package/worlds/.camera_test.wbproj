@@ -7,4 +7,7 @@ centralWidgetVisible: 1
 orthographicViewHeight: 1
 textFiles: -1
 consoles: Console:All:All
+renderingDevicePerspectives: detection_camera_robot:detection_camera;1;1;0;0
+renderingDevicePerspectives: robot(1):robodyno_camera:detection_camera;1;0.895833;0;0
 renderingDevicePerspectives: robot:robodyno_camera:camera;1;0.895833;0;0
+renderingDevicePerspectives: top_tray_camera:top_tray_camera;1;1;0;0
