@@ -1,0 +1,46 @@
+#VRML_SIM R2023b utf8
+
+PROTO RaicomConvertedPickBox [
+  field SFVec3f translation 0 0 0
+  field SFRotation rotation 0 0 1 0
+  field SFBool locked FALSE
+  field SFString name "raicom_pick_box"
+]
+{
+  Solid {
+    translation IS translation
+    rotation IS rotation
+    name IS name
+    model "RAICOM2026 grooved pick box"
+    locked IS locked
+    children [
+      Transform {
+        rotation 1 0 0 1.57079632679
+        scale 0.001 0.001 0.001
+        children [
+          Shape {
+            appearance PBRAppearance { baseColor 1 1 1 roughness 0.9 metalness 0 }
+            geometry Mesh { url [ "../meshes/converted/wuliaoxiaohe.stl" ] }
+          }
+        ]
+      }
+      Transform { translation 0 0 0.0025 children [ Shape { appearance DEF PICK_BOX_APPEARANCE PBRAppearance { baseColor 1 1 1 roughness 0.9 metalness 0 } geometry Box { size 0.135 0.07 0.005 } } ] }
+      Transform { translation 0 0.0325 0.005 children [ Shape { appearance USE PICK_BOX_APPEARANCE geometry Box { size 0.135 0.005 0.01 } } ] }
+      Transform { translation 0 -0.0325 0.005 children [ Shape { appearance USE PICK_BOX_APPEARANCE geometry Box { size 0.135 0.005 0.01 } } ] }
+      Transform { translation -0.065 0 0.005 children [ Shape { appearance USE PICK_BOX_APPEARANCE geometry Box { size 0.005 0.07 0.01 } } ] }
+      Transform { translation 0.065 0 0.005 children [ Shape { appearance USE PICK_BOX_APPEARANCE geometry Box { size 0.005 0.07 0.01 } } ] }
+      Transform { translation 0 0 0.005 children [ Shape { appearance USE PICK_BOX_APPEARANCE geometry Box { size 0.005 0.06 0.01 } } ] }
+    ]
+    boundingObject Group {
+      children [
+        Transform { translation 0 0 0.0025 children [ Box { size 0.135 0.07 0.005 } ] }
+        Transform { translation 0 0.0325 0.005 children [ Box { size 0.135 0.005 0.01 } ] }
+        Transform { translation 0 -0.0325 0.005 children [ Box { size 0.135 0.005 0.01 } ] }
+        Transform { translation -0.065 0 0.005 children [ Box { size 0.005 0.07 0.01 } ] }
+        Transform { translation 0.065 0 0.005 children [ Box { size 0.005 0.07 0.01 } ] }
+        Transform { translation 0 0 0.005 children [ Box { size 0.005 0.06 0.01 } ] }
+      ]
+    }
+    physics Physics { density -1 mass 0.08 }
+  }
+}

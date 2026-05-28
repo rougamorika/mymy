@@ -1,0 +1,167 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "../protos/protos/robodyno_webots/objects/BaseBoard.proto"
+EXTERNPROTO "../protos/protos/robodyno_webots/joints/SliderModule.proto"
+EXTERNPROTO "../protos/protos/robodyno_webots/objects/TBracket.proto"
+EXTERNPROTO "../protos/protos/robodyno_webots/joints/Pro_JP66.proto"
+EXTERNPROTO "../protos/protos/robodyno_webots/objects/PipeConnector.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/apartment_structure/protos/Wall.proto"
+EXTERNPROTO "../protos/protos/robodyno_webots/others/CustomBox.proto"
+EXTERNPROTO "../protos/protos/robodyno_webots/objects/SliderBase.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/Roughcast.proto"
+EXTERNPROTO "../protos/protos/robodyno_webots/objects/PipeLink150.proto"
+EXTERNPROTO "../protos/protos/robodyno_webots/endEffector/Vacuum_Gripper.proto"
+EXTERNPROTO "../protos/protos/robodyno_webots/camera/CameraBracket.proto"
+EXTERNPROTO "../protos/protos/robodyno_webots/camera/RobodynoCamera.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.49966837558510696 -0.2908971039576984 -0.8159107729091242 4.028495432522373
+  position 0.5007642528086261 -0.7848127505607733 1.330610875740085
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 5 5
+  floorTileSize 10 10
+}
+Robot {
+  children [
+    RobodynoCamera {
+      translation -0.01 -0.4 0.59
+      rotation 1 2.39745e-09 9.38186e-07 3.14159
+      controller "camera"
+    }
+    CameraBracket {
+      translation 0.0600001 -0.55 0.006
+      rotation 0 0 1 1.5708
+    }
+  ]
+  name "robot(1)"
+}
+Robot {
+  translation 0.01 0 0
+  children [
+    SliderBase {
+      translation 0 0 0.01
+    }
+    BaseBoard {
+      translation 0 0.1 0
+    }
+    SliderModule {
+      translation 0 0 0.02
+      motor_id "0x11"
+      children [
+        Pro_JP66 {
+          translation 0 -0.046 0.03
+          rotation 0.577349935856137 0.577349935856137 0.5773509358560258 -2.094395307179586
+          motor_id "0x12"
+          children [
+            PipeLink150 {
+              translation 0.03 0 0.03
+              rotation 0 -1 0 -1.5708
+            }
+            Pro_JP66 {
+              translation 0.21 0 0.076
+              rotation 1 0 0 3.14159
+              motor_id "0x13"
+              children [
+                PipeLink150 {
+                  translation 0.03 0 0.03
+                  rotation 0 -1 0 -1.5708
+                }
+                Pro_JP66 {
+                  translation 0.21 0 -0.016
+                  motor_id "0x14"
+                  children [
+                    Vacuum_Gripper {
+                      translation 0 0 0.01
+                      vacuum_id "0x1A"
+                    }
+                  ]
+                }
+                TBracket {
+                  translation 0.18 0 0.03
+                  rotation 0.5773509358554485 0.5773509358554485 0.5773489358556708 2.0944
+                  name "TBracket(1)"
+                }
+                PipeConnector {
+                  translation -0.015 0 0.03
+                  rotation 0.5773509358554485 0.5773509358554485 0.5773489358556708 2.0944
+                }
+                TBracket {
+                  rotation 0 0 1 -1.5707953071795862
+                }
+              ]
+            }
+            TBracket {
+              translation 0.18 0 0.03
+              rotation 0.5773509358554485 0.5773509358554485 0.5773489358556708 2.0944
+              name "TBracket(1)"
+            }
+            PipeConnector {
+              translation -0.015 0 0.03
+              rotation -0.577349935856137 -0.5773509358560258 -0.577349935856137 -2.094405307179586
+            }
+            TBracket {
+              rotation 0 0 1 -1.5707953071795862
+            }
+          ]
+        }
+        TBracket {
+        }
+      ]
+    }
+  ]
+  controller "auto_controller(01)"
+}
+Wall {
+  translation 0 -0.335 0
+  size 0.45 0.18 0.01
+}
+Wall {
+  translation 0.375 0.1 0
+  name "wall(1)"
+  size 0.25 0.25 0.01
+}
+Wall {
+  translation 0.375 0.1 0.01
+  name "wall(2)"
+  size 0.05 0.05 0.01
+  appearance Roughcast {
+    colorOverride 0 0 0
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+  }
+}
+CustomBox {
+  translation -0.09 -0.335 0.03
+  name "first_box"
+  size 0.04 0.04 0.04
+  mass 0.16
+}
+CustomBox {
+  translation -0.03 -0.335 0.03
+  name "second_box"
+  size 0.04 0.04 0.04
+  mass 0.16
+}
+CustomBox {
+  translation 0.03 -0.335 0.03
+  name "third_box"
+  size 0.04 0.04 0.04
+  mass 0.16
+}
+CustomBox {
+  translation 0.09 -0.335 0.03
+  name "fouth_box"
+  size 0.04 0.04 0.04
+  mass 0.16
+}

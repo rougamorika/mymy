@@ -1,0 +1,57 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "RaicomConvertedPlacementTraySolid.proto"
+EXTERNPROTO "RaicomConvertedPickBox.proto"
+
+PROTO Raicom2026Arena [
+  field SFVec3f translation 0 0 0
+  field SFRotation rotation 0 0 1 0
+  field SFString name "raicom2026_arena"
+]
+{
+  Solid {
+    translation IS translation
+    rotation IS rotation
+    name IS name
+    model "RAICOM2026 intelligent delivery and sorting arena"
+    locked TRUE
+    contactMaterial "arena_support"
+    children [
+      Pose {
+        translation 0 0 -0.011
+        children [
+          Shape {
+            appearance DEF ROOM_APPEARANCE PBRAppearance { baseColor 0.86 0.87 0.89 roughness 1 metalness 0 }
+            geometry Box { size 2 2 0.002 }
+          }
+        ]
+      }
+      Pose { translation 0 0 -0.005 children [ Shape { appearance DEF BOARD_APPEARANCE PBRAppearance { baseColor 0.18 0.18 0.2 roughness 1 metalness 0 } geometry Box { size 0.35 0.35 0.01 } } ] }
+      Pose { translation -0.4375 0.14 -0.005 children [ Shape { appearance USE BOARD_APPEARANCE geometry Box { size 0.175 0.35 0.01 } } ] }
+      Pose { translation -0.2625 0.14 -0.005 children [ Shape { appearance DEF ZONE_APPEARANCE PBRAppearance { baseColor 0.96 0.96 0.90 roughness 1 metalness 0 } geometry Box { size 0.175 0.35 0.01 } } ] }
+      Pose { translation 0 0.42 -0.005 children [ Shape { appearance USE BOARD_APPEARANCE geometry Box { size 0.35 0.21 0.01 } } ] }
+      Pose { translation 0.15 0.245 -0.005 children [ Shape { appearance USE BOARD_APPEARANCE geometry Box { size 0.05 0.14 0.01 } } ] }
+      Pose { translation -0.025 0.245 -0.005 children [ Shape { appearance USE ZONE_APPEARANCE geometry Box { size 0.3 0.14 0.01 } } ] }
+      Pose { translation -0.35 0.14 0.00005 children [ Shape { appearance DEF BORDER_APPEARANCE PBRAppearance { baseColor 0.05 0.05 0.05 roughness 1 metalness 0 } geometry Box { size 0.002 0.35 0.0001 } } ] }
+      Pose { translation 0.125 0.245 0.00005 children [ Shape { appearance USE BORDER_APPEARANCE geometry Box { size 0.002 0.14 0.0001 } } ] }
+      Pose { translation 0 0.315 0.00005 children [ Shape { appearance USE BORDER_APPEARANCE geometry Box { size 0.35 0.002 0.0001 } } ] }
+      RaicomConvertedPlacementTraySolid { translation -0.2625 0.2275 0.005 name "placement_tray_top" }
+      RaicomConvertedPlacementTraySolid { translation -0.2625 0.0525 0.005 name "placement_tray_bottom" }
+      RaicomConvertedPickBox { translation -0.0975 0.28 0.005 name "pick_box_1" locked TRUE }
+      RaicomConvertedPickBox { translation 0.0475 0.28 0.005 name "pick_box_2" locked TRUE }
+      RaicomConvertedPickBox { translation -0.0975 0.21 0.005 name "pick_box_3" locked TRUE }
+      RaicomConvertedPickBox { translation 0.0475 0.21 0.005 name "pick_box_4" locked TRUE }
+    ]
+    boundingObject Group {
+      children [
+        Transform { translation 0 0 -0.011 children [ Box { size 2 2 0.002 } ] }
+        Transform { translation 0 0 -0.005 children [ Box { size 0.35 0.35 0.01 } ] }
+        Transform { translation -0.4375 0.14 -0.005 children [ Box { size 0.175 0.35 0.01 } ] }
+        Transform { translation -0.2625 0.14 -0.005 children [ Box { size 0.175 0.35 0.01 } ] }
+        Transform { translation 0 0.42 -0.005 children [ Box { size 0.35 0.21 0.01 } ] }
+        Transform { translation 0.15 0.245 -0.005 children [ Box { size 0.05 0.14 0.01 } ] }
+        Transform { translation -0.025 0.245 -0.005 children [ Box { size 0.3 0.14 0.01 } ] }
+      ]
+    }
+  }
+}

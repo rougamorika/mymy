@@ -1,0 +1,113 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "../protos/Raicom2026Arena.proto"
+EXTERNPROTO "../protos/RaicomWorkpiecePlus.proto"
+EXTERNPROTO "../protos/RaicomWorkpieceRectangle.proto"
+EXTERNPROTO "../protos/RaicomWorkpieceStar.proto"
+EXTERNPROTO "../protos/RaicomWorkpieceTriangle.proto"
+EXTERNPROTO "D:/files/raicom2026_final_webots_package/protos/oriniginal_protos/protos/robodyno_webots/camera/RobodynoCamera.proto"
+EXTERNPROTO "D:/files/raicom2026_final_webots_package/protos/oriniginal_protos/protos/robodyno_webots/camera/CameraBracket.proto"
+
+WorldInfo {
+  basicTimeStep 16
+  contactProperties [
+    ContactProperties {
+      material1 "placement_tray_grip"
+      coulombFriction [
+        0.2
+      ]
+      rollingFriction 0.01 0.01 0.01
+      bounce 0
+      bounceVelocity 0
+      maxContactJoints 80
+    }
+    ContactProperties {
+      material1 "arena_support"
+      coulombFriction [
+        0.45
+      ]
+      rollingFriction 0.003 0.003 0.003
+      bounce 0
+      bounceVelocity 0
+      softERP 0.05
+      softCFM 0.005
+      maxContactJoints 80
+    }
+  ]
+}
+Viewpoint {
+  orientation 0.6300302804519192 -0.09646439350429385 -0.770555946378668 3.376463171007826
+  position 0.06216186491934203 0.22603365563929978 0.8371257545659094
+  near 0.01
+}
+Background {
+  skyColor [
+    0.97 0.98 1
+  ]
+}
+RobodynoCamera {
+  translation -0.225 0.14 0.59
+  rotation 0.7071067811859252 -0.7071067811859252 1.326789589425184e-06 3.14159
+  name "top_tray_camera"
+  cameraId "top_tray_camera"
+  controller "top_tray_recess_controller"
+}
+CameraBracket {
+  translation -0.37 0.12 0.006
+}
+RobodynoCamera {
+  translation -0.01 0.235 0.58
+  rotation 7.19235e-09 -1 9.38186e-07 3.14159
+  name "detection_camera_robot"
+  cameraId "detection_camera"
+  controller "color_detection"
+}
+CameraBracket {
+  translation -0.09 0.38 -0.004
+  rotation 0 0 1 -1.5707953071795862
+}
+DirectionalLight {
+  ambientIntensity 0.20
+  direction -0.3 0.4 -1
+  intensity 2.0
+  castShadows TRUE
+}
+DirectionalLight {
+  ambientIntensity 0.05
+  direction 0.5 -0.2 -1
+  intensity 1.0
+}
+Raicom2026Arena {
+  name "raicom2026_static_arena"
+}
+RaicomWorkpieceTriangle {
+  translation 0.07 0.27 0.02
+  name "raicom_triangle_piece(1)"
+}
+RaicomWorkpieceTriangle {
+  translation 0.02 0.27 0.02
+}
+RaicomWorkpiecePlus {
+  translation -0.135 0.2775 0.0155
+  name "box_1_plus_a"
+}
+RaicomWorkpiecePlus {
+  translation -0.06 0.2725 0.0155
+  name "box_1_plus_b"
+}
+RaicomWorkpieceRectangle {
+  translation 0.02 0.2075 0.0155
+  name "box_2_rectangle_a"
+}
+RaicomWorkpieceRectangle {
+  translation 0.075 0.2125 0.0155
+  name "box_2_rectangle_b"
+}
+RaicomWorkpieceStar {
+  translation -0.135 0.2075 0.0155
+  name "box_3_star_a"
+}
+RaicomWorkpieceStar {
+  translation -0.06 0.2125 0.0155
+  name "box_3_star_b"
+}
